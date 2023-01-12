@@ -1,22 +1,22 @@
+import { Routes, Route } from 'react-router-dom';
 import '../App/App.css'
+import CocktailDetails from '../CocktailDetails/CocktailDetails';
+import Home from '../Home/Home';
+import MyEvent from '../MyEvent/MyEvent';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes>
+      <Route path="/" element={<Home />}>
+        <Route path="ingredientsearch/:ingredientRequest" element={<Home />}/>
+        <Route path="search/:searchTerm" element={<Home />}/>
+      </Route>
+      <Route path="/cocktaildetails/:id" element={<CocktailDetails />} />
+      <Route path="/myevent" element={<MyEvent />} />
+      {/* Route for bad URL */}
+      {/* redirect /search to just Home */}
+      {/* redirect /cocktaildetails to Home */}
+    </Routes>
   );
 }
 
