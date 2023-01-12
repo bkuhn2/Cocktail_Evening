@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import '../Home/Home.css'
 import Header from '../Header/Header'
-import fetchCocktailData from '../Utilities/APIcalls'
-import { simplifyCategories, simplifyIngredients, formatSearchResults } from '../Utilities/CleanUp'
+import fetchCocktailData from '../../Utilities/APIcalls'
+import { simplifyCategories, simplifyIngredients, formatSearchResults } from '../../Utilities/CleanUp'
 
 const Home = () => {
 
