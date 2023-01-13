@@ -1,0 +1,16 @@
+.search-form {
+  border-style: solid;
+  border-color: aqua;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.search-type {
+  border-style: solid;
+  border-color: rgb(3, 75, 183);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
