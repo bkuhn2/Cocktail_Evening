@@ -53,7 +53,32 @@ const Home = () => {
       setSearchResults([]);
       //error handling, error message reset
     }
-  }, [ingredientTerm])
+  }, [ingredientTerm]);
+
+  useEffect(() => {
+    if (ingredientRequest) {
+      findMatchingIngredients();
+      //error handling, error message reset
+    } else {
+      setIngredientSearchResults([]);
+      //error handling, error message reset
+    }
+  }, [ingredientRequest])
+
+  const findMatchingIngredients = () => {
+    const searchWords = ingredientRequest.toLowerCase().split(' ').filter(word =>  word !== ''); //error handling for things like periods, comma, slashes
+    console.log(searchWords);
+    const ingredientMatches = searchWords.reduce((matchingWords, word) => {
+      const matches = allIngredients.filter(ing => ing.toLowerCase().includes(word));
+      matches.forEach(match => {
+        if (!matchingWords.includes(match)) {
+          matchingWords = [...matchingWords, match]
+        }
+      });
+      return matchingWords;
+    }, []);
+      setIngredientSearchResults(ingredientMatches)
+  }
 
   return (
     <div>
