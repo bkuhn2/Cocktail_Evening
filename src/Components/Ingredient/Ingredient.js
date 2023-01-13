@@ -1,11 +1,20 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import '../Ingredient/Ingredient.css'
 
-const Ingredient = () => {
+const Ingredient = ({name, selectAnIngredient}) => {
+
+  const chooseThisIngredient = (text) => {
+    selectAnIngredient(text);
+  }
+
   return (
-    <div>
-      
-    </div>
+    <button 
+      className='ingredient'
+      onClick={event => chooseThisIngredient(event.target.innerText)}
+    >
+      {name}
+    </button>
   )
 }
 
