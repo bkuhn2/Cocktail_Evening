@@ -1,10 +1,4 @@
 
-const simplifyCategories = (rawData) => {
-  return rawData.map(datum => {
-    return datum.strCategory
-  })
-}
-
 const simplifyIngredients = (rawData) => {
   return rawData.map(datum => {
     return datum.strIngredient1
@@ -21,4 +15,4 @@ const formatSearchResults = (rawData) => {
   })
 } //make sure this works across all fetch calls
 
-export { simplifyCategories, simplifyIngredients, formatSearchResults }
+export { simplifyIngredients, formatSearchResults }
