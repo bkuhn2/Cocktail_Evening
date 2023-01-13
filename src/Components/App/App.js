@@ -12,7 +12,6 @@ const App = () => {
   return (
     <Routes>
       <Route path="/" element={<Home />}>
-        <Route path="search/ingredientrequest/:ingredientRequest" element={<Home />}/>
         <Route path="search/ingredient/:ingredientTerm" element={<Home />}/>
         <Route path="search/name/:searchTerm" element={<Home />}/>
       </Route>
