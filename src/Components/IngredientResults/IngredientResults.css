@@ -1,0 +1,10 @@
+.ingredient-results-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ingredients-results {
+  display: flex;
+  flex-direction: column-reverse;
+}
