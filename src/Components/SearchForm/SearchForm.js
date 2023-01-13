@@ -29,7 +29,7 @@ const SearchForm = ({searchByName, makeNamesList, selectAnIngredient, setSearchR
   return (
     <form className='search-form'>
       <div className='search-type'>
-        <p>Know What Cocktail You're Searching For?</p>
+        <p className='search-input-heading'>Know What Cocktail You're Searching For?</p>
         <input
           type='text'
           name='cocktail-name'
@@ -39,7 +39,7 @@ const SearchForm = ({searchByName, makeNamesList, selectAnIngredient, setSearchR
         />
       </div>
       <div className='search-type'>
-        <p>Or, Search By What's Inside</p>
+        <p className='search-input-heading'>Or, Search By What's Inside</p>
         <input
           type='text'
           name='ingredient-name'

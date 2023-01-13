@@ -11,9 +11,10 @@ const IngredientResults = ({ingredientSearchResults, selectAnIngredient}) => {
   })
   
   return (
-    <section className='ingredient-results-area'>
+    <>
+      <section className='ingredient-results-area'>
       {ingredientSearchResults.length !== 0 && 
-        <h2>Select an ingredient to see Cocktails that match...</h2>
+        <h2 className='select-ing-header'>Select an ingredient to see cocktails that match</h2>
       }
       {ingredientSearchResults.length !== 0 &&
         <div className='ingredients-results'>
@@ -23,6 +24,8 @@ const IngredientResults = ({ingredientSearchResults, selectAnIngredient}) => {
 
 
     </section>
+
+    </>
   )
 }
 

@@ -42,6 +42,7 @@ const Home = () => {
   const findCocktailsByIngredient = () => {
     fetchCocktailData(`https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=${selectedIngredient}`)
       .then(data => {
+        //error handling - just because they give it to you on the ingrediences list does not mean its there
         setSearchResults(formatSearchResults(data.drinks));
       })
   }
@@ -70,7 +71,6 @@ const Home = () => {
 
   const findMatchingIngredients = (input) => {
     const searchWords = input.toLowerCase().split(' ').filter(word =>  word !== ''); //error handling for things like periods, comma, slashes
-    console.log(searchWords);
     const ingredientMatches = searchWords.reduce((matchingWords, word) => {
       const matches = allIngredients.filter(ing => ing.toLowerCase().includes(word));
       matches.forEach(match => {
@@ -84,11 +84,11 @@ const Home = () => {
   }
 
   return (
-    <main>
+    <main className='home-page'>
       <Header />
       <h1>Peruse our Plethora of Cocktails</h1>
       <section className='search-section'>
-        <div>
+        <div className='search-input-area'>
           <SearchForm 
             searchByName={searchByName} 
             makeNamesList={makeNamesList} 
