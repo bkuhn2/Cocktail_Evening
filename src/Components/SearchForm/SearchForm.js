@@ -9,9 +9,8 @@ const SearchForm = ({searchByName, makeNamesList, selectAnIngredient, setSearchR
   useEffect(() => {
     if (ingredientInput) {
       setNameInput('');
-    } else {
-      setSearchResults([])
-    }
+    } 
+    setSearchResults([])
     makeNamesList(ingredientInput);
     selectAnIngredient('');
   }, [ingredientInput]);
@@ -22,7 +21,7 @@ const SearchForm = ({searchByName, makeNamesList, selectAnIngredient, setSearchR
       selectAnIngredient('');
       searchByName(nameInput);
     } else {
-      setSearchResults([]);
+      setSearchResults([]); //when i type too fast int he input, this doesn't happen
     }
   }, [nameInput]);
 

@@ -16,6 +16,8 @@ const Home = () => {
   const [selectedIngredient, setSelectedIngredient] = useState('');
   const [error, setError] = useState('');
 
+  //NOTE: GOING BACK TO USEPARAMS, ROUTER TO DYNAMICALLY RENDER SEARCH RESULTS
+
   useEffect(() => {
     fetchCocktailData(`https://www.thecocktaildb.com/api/json/v2/9973533/list.php?i=list`)
       .then(data => setAllIngredients(simplifyIngredients(data.drinks)))
@@ -101,7 +103,7 @@ const Home = () => {
           />
         </div>
         <section className='search-display'>
-          {(!error && searchResults.length !== 0) && <SearchResultsDisplay />}
+          {(!error && searchResults.length !== 0) && <SearchResultsDisplay searchResults={searchResults}/>}
           {/*conditional if no search results and no error and no ingreds, display text letting user know that results display here */}
           {/* if there's an error, display that
           if there's search results, display SearchResultsDisplay
