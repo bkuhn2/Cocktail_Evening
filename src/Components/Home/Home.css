@@ -1,0 +1,13 @@
+.search-section {
+  border-style: solid;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.search-display {
+  border-style: solid;
+  border-color: red;
+  display: flex;
+  flex-direction: column;
+}
