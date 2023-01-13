@@ -1,59 +1,52 @@
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom';
 import '../SearchForm/SearchForm.css'
 
-const SearchForm = () => {
+const SearchForm = ({searchByName, makeNamesList, selectAnIngredient, setSearchResults}) => {
 
   const [nameInput, setNameInput] = useState('');
-  const [ingredientInput, setIngredientInput] = useState('');
-  const [selectedIngredient, setSelectedIngredient] = useState('');
+  const [ingredientInput, setIngredientInput] = useState(''); //error handling for things like periods, comma, slashes
 
   useEffect(() => {
-    if (ingredientInput !== '') {
+    if (ingredientInput) {
       setNameInput('');
+    } else {
+      setSearchResults([])
     }
+    makeNamesList(ingredientInput);
+    selectAnIngredient('');
   }, [ingredientInput]);
 
   useEffect(() => {
-    if (nameInput !== '') {
+    if (nameInput) {
       setIngredientInput('');
+      selectAnIngredient('');
+      searchByName(nameInput);
+    } else {
+      setSearchResults([]);
     }
   }, [nameInput]);
-
-  const clearSearchFields = () => {
-    setNameInput('');
-    setIngredientInput('');
-  }
-
 
   return (
     <form className='search-form'>
       <div className='search-type'>
-        <p>Search By Cocktail Name</p>
+        <p>Know What Cocktail You're Searching For?</p>
         <input
           type='text'
           name='cocktail-name'
-          placeholder='What are you in the mood for?'
+          placeholder='Search by name'
           value={nameInput}
           onChange={event => setNameInput(event.target.value)}
         />
-        <Link to={`/search/name/${nameInput}`}>
-          <button onClick={clearSearchFields}>Let's Go</button>
-        </Link>
       </div>
-      <p>OR</p>
       <div className='search-type'>
-        <p>Search By Ingredient</p>
+        <p>Or, Search By What's Inside</p>
         <input
           type='text'
           name='ingredient-name'
-          placeholder='Dig a little deeper...'
+          placeholder='Search by ingredient'
           value={ingredientInput}
           onChange={event => setIngredientInput(event.target.value)}
         />
-        <Link to={`/search/ingredientrequest/${ingredientInput}`}>
-          <button onClick={clearSearchFields}>Let's Go</button>
-        </Link>
       </div>
     </form>
   )
