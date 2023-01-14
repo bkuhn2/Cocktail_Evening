@@ -1,0 +1,36 @@
+.search-form {
+  border-style: solid;
+  border-color: aqua;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 25vh;
+}
+
+.search-type {
+  border-style: solid;
+  border-color: rgb(3, 75, 183);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.search-input-heading {
+  width: 100%;
+  text-align: center;
+  font-size: 2.4em;
+  margin-bottom: .7em;
+}
+
+input {
+  /* margin-bottom: 1.6em; */
+  font-size: 1.2em;
+  width: 25em;
+  height: 2.4em;
+}
+
+.search-button {
+  cursor: pointer;
+}

@@ -1,11 +1,12 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import '../Ingredient/Ingredient.css'
 
-const Ingredient = () => {
+const Ingredient = ({name}) => {
   return (
-    <div>
-      
-    </div>
+    <Link to={`/ingredientResults/${name}`}>
+      <button className='ingredient'>{name}</button>
+    </Link>
   )
 }
 

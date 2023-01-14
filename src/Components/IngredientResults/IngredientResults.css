@@ -1,0 +1,26 @@
+.select-ing-header {
+  font-size: 1.7em;
+  width: 75%;
+  text-align: center;
+}
+
+.ingredient-results-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* min-height: 10vh; */
+  /* max-height: 42vh; */
+  height: 42vh;
+  overflow-x: auto;
+  /* overflow-y: scroll; */
+  border-style: solid;
+  border-color: greenyellow;
+  margin-top: 1em;
+}
+
+.ingredients-results {
+  display: flex;
+  flex-direction: column-reverse;
+  border-style: solid;
+  border-color: rgba(31, 109, 34, 0.648);
+}

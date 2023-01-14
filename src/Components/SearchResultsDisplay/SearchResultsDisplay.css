@@ -1,0 +1,16 @@
+.search-results-display {
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 20px;
+  overflow-x: auto;
+}
+
+.clear-area {
+  align-self: center;
+}
+
+.clear-button {
+  width: 8em;
+  cursor: pointer;
+}
