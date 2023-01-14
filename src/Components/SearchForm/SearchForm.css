@@ -30,3 +30,7 @@ input {
   width: 25em;
   height: 2.4em;
 }
+
+.search-button {
+  cursor: pointer;
+}
