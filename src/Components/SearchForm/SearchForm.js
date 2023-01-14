@@ -1,29 +1,28 @@
 import React, { useEffect, useState } from 'react'
+import { Link, useParams } from 'react-router-dom';
 import '../SearchForm/SearchForm.css'
 
-const SearchForm = ({searchByName, makeNamesList, selectAnIngredient, setSearchResults}) => {
-
+const SearchForm = ({makeNamesList}) => {
   const [nameInput, setNameInput] = useState('');
   const [ingredientInput, setIngredientInput] = useState(''); //error handling for things like periods, comma, slashes
+  let cocktailName = useParams().name;
 
   useEffect(() => {
     if (ingredientInput) {
       setNameInput('');
     } 
-    setSearchResults([])
     makeNamesList(ingredientInput);
-    selectAnIngredient('');
   }, [ingredientInput]);
 
   useEffect(() => {
     if (nameInput) {
       setIngredientInput('');
-      selectAnIngredient('');
-      searchByName(nameInput);
-    } else {
-      setSearchResults([]); //when i type too fast int he input, this doesn't happen
-    }
+    } 
   }, [nameInput]);
+
+  useEffect(() => {
+    setNameInput('')
+  }, [cocktailName])
 
   return (
     <form className='search-form'>
@@ -36,6 +35,9 @@ const SearchForm = ({searchByName, makeNamesList, selectAnIngredient, setSearchR
           value={nameInput}
           onChange={event => setNameInput(event.target.value)}
         />
+        <Link to={`/nameResults/${nameInput}`}>
+          <button className='search-button' type='button'>Find</button>
+        </Link>
       </div>
       <div className='search-type'>
         <p className='search-input-heading'>Or, Search By What's Inside</p>

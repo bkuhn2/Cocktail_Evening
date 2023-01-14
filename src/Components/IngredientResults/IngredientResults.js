@@ -2,11 +2,11 @@ import React from 'react'
 import '../IngredientResults/IngredientResults.css'
 import Ingredient from '../Ingredient/Ingredient'
 
-const IngredientResults = ({ingredientSearchResults, selectAnIngredient}) => {
+const IngredientResults = ({ingredientSearchResults}) => {
 
   const ingredients = ingredientSearchResults.map((ing, index) => {
     return (
-      <Ingredient name={ing} key={index+1} selectAnIngredient={selectAnIngredient}/>
+      <Ingredient name={ing} key={index+1} />
     )
   })
   
@@ -21,10 +21,7 @@ const IngredientResults = ({ingredientSearchResults, selectAnIngredient}) => {
           {ingredients}
         </div>
       }
-
-
     </section>
-
     </>
   )
 }
