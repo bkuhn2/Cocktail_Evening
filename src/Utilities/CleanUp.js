@@ -19,10 +19,11 @@ const formatCocktailData = (rawData) => {
   const data = {
     name: rawData.strDrink,
     image: rawData.strDrinkThumb,
-    hasAlcohol: rawData.strAlcoholic,
+    hasAlcohol: (rawData.strAlcoholic.toLowerCase() === 'alcoholic') ? true : false,
     glass: rawData.strGlass,
     instructions: rawData.strInstructions,
-    ingredients: generateIngredients(rawData)
+    ingredients: generateIngredients(rawData),
+    id: rawData.idDrink
   }
   return data; // stress test if any of the data are missing one of these
 }
@@ -32,7 +33,7 @@ const generateIngredients = (rawData) => {
   return ingredientKeys.reduce((list, ing, index) => {
     if (rawData[ing] !== null) {
       const measureKey = `strMeasure${index+1}` //minor tweak - if there's a space at the end, remove it
-      const listItem = `${rawData[measureKey]} ${rawData[ing]}`
+      const listItem = `${rawData[measureKey] ? rawData[measureKey] : '...'} ${rawData[ing]}`
       list = [...list, listItem]
     }
     return list;
