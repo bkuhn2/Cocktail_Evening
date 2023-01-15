@@ -4,7 +4,8 @@ const fetchCocktailData = (url) => {
     if (response.ok) {
       return response.json()
     } else {
-      throw new Error('Bad Response Error')
+      console.log('BAD response: ', response);
+      throw new Error('Failed to load data, our apologies.')
     }
   })
 }
