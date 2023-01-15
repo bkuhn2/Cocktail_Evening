@@ -1,0 +1,7 @@
+.event-cocktail-image {
+  position: relative;
+  width: 15em;
+  object-fit: contain;
+  margin-left: 2em;
+  margin-right: 2em;
+}
