@@ -15,6 +15,10 @@ const App = () => {
     } 
   }
 
+  const removeCocktail = (id) => {
+    setEventOfferings(eventOfferings.filter(cocktail => cocktail.id !== id));
+  }
+
   return (
     <Routes>
       <Route path="/" element={<Home />}>
@@ -26,7 +30,11 @@ const App = () => {
         eventOfferings={eventOfferings}
         />} 
       />
-      <Route path="/myevent" element={<MyEvent />} />
+      <Route path="/myevent" element={<MyEvent 
+        eventOfferings={eventOfferings}
+        removeCocktail={removeCocktail}
+        />} 
+      />
       {/* Route for bad URL */}
       {/* redirect /search to just Home */}
       {/* redirect /cocktaildetails to Home */}

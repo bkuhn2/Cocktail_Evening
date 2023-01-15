@@ -1,13 +1,18 @@
 import React from 'react'
 import '../MyEvent/MyEvent.css'
 import Header from '../Header/Header'
+import EventOfferings from '../EventOfferings/EventOfferings'
 
-const MyEvent = () => {
+const MyEvent = ({eventOfferings, removeCocktail}) => {
   return (
-    <div>
+    <main className='event-page'>
       <Header />
-      <h1>MY EVENT</h1>
-    </div>
+      <section className='event-section'>
+        <h1 className='event-heading'>MY EVENT</h1>
+        {eventOfferings.length === 0 && <h2>Browse our cocktail selection to find items to add to your event</h2>}
+        {eventOfferings.length !== 0 && <EventOfferings eventOfferings={eventOfferings} removeCocktail={removeCocktail} />}
+      </section>
+    </main>
   )
 }
 

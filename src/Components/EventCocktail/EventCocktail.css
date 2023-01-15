@@ -1,0 +1,28 @@
+.event-cocktail-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-style: solid;
+}
+
+.event-cocktail-name {
+  font-size: 2em;
+}
+
+
+.event-cocktail-image {
+  position: relative;
+  width: 15em;
+  object-fit: contain;
+  margin-left: 2em;
+  margin-right: 2em;
+}
+
+.event-ingredient-li {
+  font-style: italic;
+}
+
+.delete-button {
+  margin-bottom: 2em;
+}
+
