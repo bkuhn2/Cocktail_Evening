@@ -9,13 +9,23 @@ const App = () => {
 
   const [eventOfferings, setEventOfferings] = useState([]);
 
+  const addCocktail = (cocktail) => {
+    if (eventOfferings.filter(item => item.id === cocktail.id).length === 0) {
+      setEventOfferings([...eventOfferings, cocktail])
+    } 
+  }
+
   return (
     <Routes>
       <Route path="/" element={<Home />}>
         <Route path="/nameResults/:name" element={<Home />} />
         <Route path="/ingredientResults/:ingredient" element={<Home />} />
       </Route>
-      <Route path="/cocktaildetails/:id" element={<CocktailDetails />} />
+      <Route path="/cocktaildetails/:id" element={<CocktailDetails 
+        addCocktail={addCocktail}
+        eventOfferings={eventOfferings}
+        />} 
+      />
       <Route path="/myevent" element={<MyEvent />} />
       {/* Route for bad URL */}
       {/* redirect /search to just Home */}
