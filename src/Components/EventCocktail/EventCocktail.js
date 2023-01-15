@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import '../EventCocktail/EventCocktail.css'
+import PropTypes from 'prop-types'
 
 const EventCocktail = ({cocktail, removeCocktail}) => {
 
@@ -33,4 +34,9 @@ const EventCocktail = ({cocktail, removeCocktail}) => {
   )
 }
 
-export default EventCocktail
+export default EventCocktail;
+
+EventCocktail.propTypes = {
+  cocktail: PropTypes.object.isRequired,
+  removeCocktail: PropTypes.func.isRequired
+}

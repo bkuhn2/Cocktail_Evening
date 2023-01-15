@@ -1,6 +1,7 @@
 import React from 'react'
 import '../IngredientResults/IngredientResults.css'
 import Ingredient from '../Ingredient/Ingredient'
+import PropTypes from 'prop-types'
 
 const IngredientResults = ({ingredientSearchResults, error}) => {
 
@@ -27,4 +28,9 @@ const IngredientResults = ({ingredientSearchResults, error}) => {
   )
 }
 
-export default IngredientResults
+export default IngredientResults;
+
+IngredientResults.propTypes = {
+  ingredientSearchResults: PropTypes.arrayOf(PropTypes.string).isRequired,
+  error: PropTypes.string.isRequired
+}

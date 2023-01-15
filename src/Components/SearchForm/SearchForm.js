@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom';
 import '../SearchForm/SearchForm.css'
+import PropTypes from 'prop-types'
 
 const SearchForm = ({makeNamesList}) => {
   const [nameInput, setNameInput] = useState('');
@@ -65,4 +66,8 @@ const SearchForm = ({makeNamesList}) => {
   )
 }
 
-export default SearchForm
+export default SearchForm;
+
+SearchForm.propTypes = {
+  makeNamesList: PropTypes.func.isRequired
+}

@@ -2,6 +2,7 @@ import React from 'react'
 import '../SearchResultsDisplay/SearchResultsDisplay.css'
 import SearchResultItem from '../SearchResultItem/SearchResultItem'
 import { Link, useParams } from 'react-router-dom'
+import PropTypes from 'prop-types'
 
 const SearchResultsDisplay = ({searchResults}) => {
   const results = searchResults.map(result => {
@@ -32,4 +33,12 @@ const SearchResultsDisplay = ({searchResults}) => {
   )
 }
 
-export default SearchResultsDisplay
+export default SearchResultsDisplay;
+
+SearchResultsDisplay.propTypes = {
+  searchResults: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired
+  })).isRequired,
+}

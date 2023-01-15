@@ -4,6 +4,8 @@ import '../CocktailDetails/CocktailDetails.css'
 import Header from '../Header/Header'
 import fetchCocktailData from '../../Utilities/APIcalls'
 import { formatCocktailData, generateIngredients } from '../../Utilities/CleanUp'
+import PropTypes, { object } from 'prop-types'
+
 
 const CocktailDetails = ({addCocktail, eventOfferings}) => {
 
@@ -15,7 +17,6 @@ const CocktailDetails = ({addCocktail, eventOfferings}) => {
   useEffect(() => {
     fetchCocktailData(`https://www.thecocktaildb.com/api/json/v2/9973533/lookup.php?i=${cocktailID}`)
       .then(data => {
-        console.log(data);
         if (!data.drinks || data.drinks.length === 0) {
           throw new Error(`no data back`)
         } else {
@@ -84,4 +85,17 @@ const CocktailDetails = ({addCocktail, eventOfferings}) => {
   )
 }
 
-export default CocktailDetails
+export default CocktailDetails;
+
+CocktailDetails.propTypes = {
+  addCocktail: PropTypes.func.isRequired,
+  eventOfferings: PropTypes.arrayOf(PropTypes.shape({
+    glass: PropTypes.string,
+    hasAlcohol: PropTypes.bool,
+    id: PropTypes.string,
+    image: PropTypes.string,
+    ingredients: PropTypes.arrayOf(PropTypes.string),
+    instructions: PropTypes.string,
+    name: PropTypes.string
+  })).isRequired
+};

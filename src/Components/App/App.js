@@ -27,14 +27,12 @@ const App = () => {
         <Route path="/nameResults/:name" element={<Home />} />
         <Route path="/ingredientResults/:ingredient" element={<Home />} />
       </Route>
-      <Route path="/cocktaildetails/:id" element={<CocktailDetails 
-        addCocktail={addCocktail}
-        eventOfferings={eventOfferings}
+      <Route path="/cocktaildetails/:id" element={
+        <CocktailDetails addCocktail={addCocktail} eventOfferings={eventOfferings}
         />} 
       />
-      <Route path="/myevent" element={<MyEvent 
-        eventOfferings={eventOfferings}
-        removeCocktail={removeCocktail}
+      <Route path="/myevent" element={
+        <MyEvent eventOfferings={eventOfferings} removeCocktail={removeCocktail}
         />} 
       />
       <Route path='*' element={<NoMatch />}/>

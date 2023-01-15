@@ -2,6 +2,7 @@ import React from 'react'
 import '../MyEvent/MyEvent.css'
 import Header from '../Header/Header'
 import EventOfferings from '../EventOfferings/EventOfferings'
+import PropTypes, { object } from 'prop-types'
 
 const MyEvent = ({eventOfferings, removeCocktail}) => {
   return (
@@ -16,4 +17,17 @@ const MyEvent = ({eventOfferings, removeCocktail}) => {
   )
 }
 
-export default MyEvent
+export default MyEvent;
+
+MyEvent.propTypes = {
+  eventOfferings: PropTypes.arrayOf(PropTypes.shape({
+    glass: PropTypes.string,
+    hasAlcohol: PropTypes.bool,
+    id: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
+    ingredients: PropTypes.arrayOf(PropTypes.string),
+    instructions: PropTypes.string,
+    name: PropTypes.string.isRequired
+  })).isRequired,
+  removeCocktail: PropTypes.func.isRequired
+}
