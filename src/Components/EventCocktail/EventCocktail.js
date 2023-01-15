@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import '../EventCocktail/EventCocktail.css'
 
 const EventCocktail = ({cocktail, removeCocktail}) => {
@@ -21,7 +22,9 @@ const EventCocktail = ({cocktail, removeCocktail}) => {
   return (
     <div className='event-cocktail-item'>
       <p className='event-cocktail-name'>{cocktail.name}</p>
-      <img className='event-cocktail-image' src={cocktail.image} alt={`${cocktail.name} image`}/>
+      <Link to={`/cocktaildetails/${cocktail.id}`}>
+        <img className='event-cocktail-image' src={cocktail.image} alt={`${cocktail.name} image`}/>
+      </Link>
       <ul>
         {makeIngredientList()}
       </ul>
