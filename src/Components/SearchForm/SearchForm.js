@@ -24,6 +24,16 @@ const SearchForm = ({makeNamesList}) => {
     setNameInput('')
   }, [cocktailName])
 
+  const handleNameInput = (name) => {
+    const formattedName = name.replace(/[\/\\#,%?<>^{}]/g, '');
+    setNameInput(formattedName);
+  }
+
+  const handleIngredientInput = (name) => {
+    const formattedName = name.replace(/[\/\\#,%?<>^{}]/g, '');
+    setIngredientInput(formattedName);
+  }
+
   return (
     <form className='search-form'>
       <div className='search-type'>
@@ -34,7 +44,7 @@ const SearchForm = ({makeNamesList}) => {
             name='cocktail-name'
             placeholder='Search by name'
             value={nameInput}
-            onChange={event => setNameInput(event.target.value)}
+            onChange={event => handleNameInput(event.target.value)}
           />
           <Link to={`/nameResults/${nameInput}`}>
             <button className='search-button' type='button'>Find</button>
@@ -48,7 +58,7 @@ const SearchForm = ({makeNamesList}) => {
           name='ingredient-name'
           placeholder='Search by ingredient'
           value={ingredientInput}
-          onChange={event => setIngredientInput(event.target.value)}
+          onChange={event => handleIngredientInput(event.target.value)}
         />
       </div>
     </form>
