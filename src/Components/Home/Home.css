@@ -6,6 +6,11 @@
   background-color: antiquewhite;
 }
 
+.home-title {
+  text-align: center;
+  font-size: 2.2em;
+}
+
 .search-section {
   margin: auto;
   height: 80vh;

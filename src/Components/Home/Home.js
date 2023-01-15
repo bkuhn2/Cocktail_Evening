@@ -83,7 +83,7 @@ const Home = () => {
   return (
     <main className='home-page'>
       <Header />
-      <h1>Peruse our Plethora of Cocktails</h1>
+      <h1 className='home-title'>Peruse our Plethora of Cocktails</h1>
       <section className='search-section'>
         <div className='search-input-area'>
           <SearchForm 
