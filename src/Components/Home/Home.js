@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import '../Home/Home.css'
 import Header from '../Header/Header'
-import ErrorMessage from '../ErrorMessage/ErrorMessage'
 import SearchForm from '../SearchForm/SearchForm'
 import IngredientResults from '../IngredientResults/IngredientResults'
 import SearchResultsDisplay from '../SearchResultsDisplay/SearchResultsDisplay'
