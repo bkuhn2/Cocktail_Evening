@@ -4,6 +4,8 @@ import '../App/App.css'
 import CocktailDetails from '../CocktailDetails/CocktailDetails';
 import Home from '../Home/Home';
 import MyEvent from '../MyEvent/MyEvent';
+import NoMatch from '../NoMatch/NoMatch';
+ 
 
 const App = () => {
 
@@ -25,19 +27,15 @@ const App = () => {
         <Route path="/nameResults/:name" element={<Home />} />
         <Route path="/ingredientResults/:ingredient" element={<Home />} />
       </Route>
-      <Route path="/cocktaildetails/:id" element={<CocktailDetails 
-        addCocktail={addCocktail}
-        eventOfferings={eventOfferings}
+      <Route path="/cocktaildetails/:id" element={
+        <CocktailDetails addCocktail={addCocktail} eventOfferings={eventOfferings}
         />} 
       />
-      <Route path="/myevent" element={<MyEvent 
-        eventOfferings={eventOfferings}
-        removeCocktail={removeCocktail}
+      <Route path="/myevent" element={
+        <MyEvent eventOfferings={eventOfferings} removeCocktail={removeCocktail}
         />} 
       />
-      {/* Route for bad URL */}
-      {/* redirect /search to just Home */}
-      {/* redirect /cocktaildetails to Home */}
+      <Route path='*' element={<NoMatch />}/>
     </Routes>
   );
 }

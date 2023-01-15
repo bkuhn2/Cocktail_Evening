@@ -4,22 +4,33 @@ import '../CocktailDetails/CocktailDetails.css'
 import Header from '../Header/Header'
 import fetchCocktailData from '../../Utilities/APIcalls'
 import { formatCocktailData, generateIngredients } from '../../Utilities/CleanUp'
+import PropTypes, { object } from 'prop-types'
+
 
 const CocktailDetails = ({addCocktail, eventOfferings}) => {
 
   const [selectedCocktail, setSelectedCocktail] = useState();
+  const [error, setError] = useState('');
   const [saved, setSaved] = useState(false);
   let cocktailID = useParams().id;
 
   useEffect(() => {
     fetchCocktailData(`https://www.thecocktaildb.com/api/json/v2/9973533/lookup.php?i=${cocktailID}`)
       .then(data => {
-        setSelectedCocktail(formatCocktailData(data.drinks[0]));
+        if (!data.drinks || data.drinks.length === 0) {
+          throw new Error(`no data back`)
+        } else {
+          setSelectedCocktail(formatCocktailData(data.drinks[0]));
+        }
+      })
+      .catch(error => {
+        setError(`Looks like there's some missing data or an error, try another cocktail or check with site administrator.`);
       })
   }, [cocktailID]);
 
   useEffect(() => {
     if (selectedCocktail) {
+      setError('');
       evaluateIfSaved();
     }
   }, [selectedCocktail])
@@ -49,8 +60,9 @@ const CocktailDetails = ({addCocktail, eventOfferings}) => {
   return (
     <main className='details-page'>
       <Header />
-      {!selectedCocktail && <h2>be right there with your request</h2>}
-      {selectedCocktail &&
+      {error && <h2 className='detail-status-message'>{error}</h2>}
+      {(!selectedCocktail && !error) && <h2 className='detail-status-message'>Be right there with your request...</h2>}
+      {(selectedCocktail && !error) &&
         <section className='cocktail-details'>
           <img className='cocktail-detail-image' src={selectedCocktail.image} alt={`Image of ${selectedCocktail.name}`}/>
           <div className='cocktail-details-area'>
@@ -73,4 +85,17 @@ const CocktailDetails = ({addCocktail, eventOfferings}) => {
   )
 }
 
-export default CocktailDetails
+export default CocktailDetails;
+
+CocktailDetails.propTypes = {
+  addCocktail: PropTypes.func.isRequired,
+  eventOfferings: PropTypes.arrayOf(PropTypes.shape({
+    glass: PropTypes.string,
+    hasAlcohol: PropTypes.bool,
+    id: PropTypes.string,
+    image: PropTypes.string,
+    ingredients: PropTypes.arrayOf(PropTypes.string),
+    instructions: PropTypes.string,
+    name: PropTypes.string
+  })).isRequired
+};

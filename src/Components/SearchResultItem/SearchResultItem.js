@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import '../SearchResultItem/SearchResultItem.css'
+import PropTypes from 'prop-types'
 
 const SearchResultItem = ({name, id, image}) => {
   return (
@@ -15,4 +16,10 @@ const SearchResultItem = ({name, id, image}) => {
   )
 }
 
-export default SearchResultItem
+export default SearchResultItem;
+
+SearchResultItem.propTypes = {
+  name: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+}

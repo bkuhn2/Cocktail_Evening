@@ -1,8 +1,8 @@
 .ingredient {
   text-align: center;
-  font-size:1.3em;
+  font-size:1.1em;
   width: 20em;
   height: 2em;
-  margin-bottom: 1.2em;
+  margin-bottom: 1em;
   cursor: pointer;
 }
