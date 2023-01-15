@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import '../Home/Home.css'
 import Header from '../Header/Header'
+import ErrorMessage from '../ErrorMessage/ErrorMessage'
 import SearchForm from '../SearchForm/SearchForm'
 import IngredientResults from '../IngredientResults/IngredientResults'
 import SearchResultsDisplay from '../SearchResultsDisplay/SearchResultsDisplay'
@@ -13,13 +14,18 @@ const Home = () => {
   const [allIngredients, setAllIngredients] = useState([]);
   const [searchResults, setSearchResults] = useState([]);
   const [ingredientSearchResults, setIngredientSearchResults] = useState([]);
+  const [APIerror, setAPIError] = useState('');
   const [error, setError] = useState('');
+  const [ingError, setIngError] = useState('');
   let cocktailName = useParams().name;
   let cocktailIngredient = useParams().ingredient;
 
   useEffect(() => {
     fetchCocktailData(`https://www.thecocktaildb.com/api/json/v2/9973533/list.php?i=list`)
       .then(data => setAllIngredients(simplifyIngredients(data.drinks)))
+      .catch(error => {
+        setAPIError('Failed to load page, our apologies.')
+      })
   }, []);
 
   useEffect(() => {
@@ -29,40 +35,50 @@ const Home = () => {
     } else {
       setError('');
       setSearchResults([])
-    }
-
+    };
     if (cocktailIngredient) {
       setError('');
       findCocktailsByIngredient();
     } else {
       setError('');
       setSearchResults([])
-    }
+    };
   }, [cocktailName, cocktailIngredient])
 
   const findCocktailsByName = () => {
     fetchCocktailData(`https://www.thecocktaildb.com/api/json/v2/9973533/search.php?s=${cocktailName}`)
       .then(data => {
-        //error handling - make sure we throw error if we get nothing back, i.e. data.drinks === null
-        setSearchResults(formatSearchResults(data.drinks));
+        if (!data.drinks) {
+          throw new Error(`Apologies, we couldn't find anything matching "${cocktailName}."`)
+        } else {
+          setSearchResults(formatSearchResults(data.drinks));
+        }
+      })
+      .catch(error => {
+        setError(error.message);
       })
   }
 
   const findCocktailsByIngredient = () => {
     fetchCocktailData(`https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=${cocktailIngredient}`)
       .then(data => {
-        //error handling - just because they give it to you on the ingrediences list does not mean its there
-        setSearchResults(formatSearchResults(data.drinks));
+        if (!data.drinks || data.drinks === 'None Found') {
+          throw new Error(`Apologies, we couldn't find drinks with ${cocktailIngredient}, but check back as we're always updated our storerooms.`)
+        } else {
+          setSearchResults(formatSearchResults(data.drinks));
+        }
+      })
+      .catch(error => {
+        setError(error.message);
       })
   }
 
   const makeNamesList = (input) => {
     if (input) {
       findMatchingIngredients(input);
-      //error handling, error message reset
     } else {
+      setIngError('');
       setIngredientSearchResults([]);
-      //error handling, error message reset
     }
   }
 
@@ -77,30 +93,42 @@ const Home = () => {
       });
       return matchingWords;
     }, []);
-      setIngredientSearchResults(ingredientMatches)
+    if (ingredientMatches.length === 0) {
+      setIngError(`Couldn't find any matching ingredients.`);
+      console.log('error ingredientMatches: ', ingredientMatches);
+    } else {
+      console.log('success ingredientMatches: ', ingredientMatches);
+      setIngError('');
+      setIngredientSearchResults(ingredientMatches);
+    }
   }
 
   return (
     <main className='home-page'>
       <Header />
       <h1 className='home-title'>Peruse our Plethora of Cocktails</h1>
-      <section className='search-section'>
-        <div className='search-input-area'>
-          <SearchForm 
-            makeNamesList={makeNamesList} 
-          />
-          <IngredientResults 
-            ingredientSearchResults={ingredientSearchResults} 
-          />
-        </div>
-        <section className='search-display'>
-          {(!error && searchResults.length !== 0) && <SearchResultsDisplay searchResults={searchResults} />}
-          {/*conditional if no search results and no error and no ingreds, display text letting user know that results display here */}
-          {/* if there's an error, display that
-          if there's search results, display SearchResultsDisplay
-          */}
+      {APIerror && <h2>{APIerror}</h2>}
+      {!APIerror && 
+        <section className='search-section'>
+          <div className='search-input-area'>
+            <SearchForm 
+              makeNamesList={makeNamesList} 
+            />
+            <IngredientResults 
+              ingredientSearchResults={ingredientSearchResults}
+              error={ingError} 
+            />
+          </div>
+          <section className='search-display'>
+            {(!error && searchResults.length !== 0) && <SearchResultsDisplay searchResults={searchResults}/>}
+            {error && <h2>{error}</h2>}
+            {/*conditional if no search results and no error and no ingreds, display text letting user know that results display here */}
+            {/* if there's an error, display that
+            if there's search results, display SearchResultsDisplay
+            */}
+          </section>
         </section>
-      </section>
+      }
     </main>
   )
 }
