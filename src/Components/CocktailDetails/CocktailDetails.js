@@ -8,6 +8,7 @@ import { formatCocktailData, generateIngredients } from '../../Utilities/CleanUp
 const CocktailDetails = () => {
 
   const [selectedCocktail, setSelectedCocktail] = useState({});
+  const [saved, setSaved] = useState(Boolean); // useEffect to check saved array and there, TRUE
   let cocktailID = useParams().id;
 
   useEffect(() => {
@@ -15,13 +16,37 @@ const CocktailDetails = () => {
       .then(data => {
         setSelectedCocktail(formatCocktailData(data.drinks[0]))
       })
-  }, [cocktailID])
+  }, [cocktailID]);
+
+  const makeIngredientList = () => {
+    if (selectedCocktail.ingredients) {
+      return selectedCocktail.ingredients.map((ing, index) => {
+        return (
+          <li className='ingredient-li' key={index+1}>{ing}</li>
+        )
+      })
+    }
+  }
 
   return (
-    <div>
+    <main className='details-page'>
       <Header />
-      <h1>COCKTAIL DETAILS</h1>
-    </div>
+      <section className='cocktail-details'>
+        <img className='cocktail-detail-image' src={selectedCocktail.image} alt={`Image of ${selectedCocktail.name}`}/>
+        <div className='cocktail-details-area'>
+          <h2>{selectedCocktail.name}</h2>
+          <p>{`Served in a ${selectedCocktail.glass}`}</p>
+          <p>{selectedCocktail.hasAlcohol}</p>
+          <p>Ingredients:</p>
+          <ul>
+            {makeIngredientList()}
+          </ul>
+          <p>{selectedCocktail.instructions}</p>
+          <button className='add-button' type='button'>Add this to my event offerings</button> 
+          {/* make conditional so that if it's already in there, this doesn't show, and lets them know once clicked */}
+        </div>
+      </section>
+    </main>
   )
 }
 
