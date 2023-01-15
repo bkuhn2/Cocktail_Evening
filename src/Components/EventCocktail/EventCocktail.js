@@ -7,7 +7,7 @@ const EventCocktail = ({cocktail, removeCocktail}) => {
     if (cocktail.ingredients) {
       return cocktail.ingredients.map((ing, index) => {
         return (
-          <li className='ingredient-li' key={index+1}>{ing}</li>
+          <li className='event-ingredient-li' key={index+1}>{ing}</li>
         )
       })
     }
@@ -19,13 +19,13 @@ const EventCocktail = ({cocktail, removeCocktail}) => {
   }
 
   return (
-    <div>
-      <p>{cocktail.name}</p>
+    <div className='event-cocktail-item'>
+      <p className='event-cocktail-name'>{cocktail.name}</p>
       <img className='event-cocktail-image' src={cocktail.image} alt={`${cocktail.name} image`}/>
       <ul>
         {makeIngredientList()}
       </ul>
-      <button onClick={event => handleDelete(event)}>Remove from my event</button>
+      <button className='delete-button' onClick={event => handleDelete(event)}>Remove from my event</button>
     </div>
   )
 }

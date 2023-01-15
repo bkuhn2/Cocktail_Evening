@@ -5,3 +5,13 @@
   border-color: hotpink;
   background-color: antiquewhite;
 }
+
+.event-section {
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+.event-heading {
+  font-size: 2.3em;
+}

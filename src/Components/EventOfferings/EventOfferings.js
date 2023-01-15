@@ -3,9 +3,9 @@ import '../EventOfferings/EventOfferings.css'
 import EventCocktail from '../EventCocktail/EventCocktail'
 
 const EventOfferings = ({eventOfferings, removeCocktail}) => {
-  
+
   const eventCocktails = eventOfferings.map(cocktail => {
-    return <EventCocktail cocktail={cocktail} removeCocktail={removeCocktail}/>
+    return <EventCocktail cocktail={cocktail} removeCocktail={removeCocktail} key={cocktail.id}/>
   })
 
   return (
