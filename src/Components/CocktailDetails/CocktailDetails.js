@@ -8,6 +8,7 @@ import { formatCocktailData, generateIngredients } from '../../Utilities/CleanUp
 const CocktailDetails = ({addCocktail, eventOfferings}) => {
 
   const [selectedCocktail, setSelectedCocktail] = useState();
+  //error state
   const [saved, setSaved] = useState(false);
   let cocktailID = useParams().id;
 

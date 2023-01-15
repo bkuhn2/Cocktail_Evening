@@ -4,6 +4,7 @@
   border-style: solid;
   border-color: hotpink;
   background-color: antiquewhite;
+  overflow-x: auto;
 }
 
 .event-section {

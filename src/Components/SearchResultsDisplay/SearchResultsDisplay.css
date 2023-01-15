@@ -1,9 +1,10 @@
 .search-results-display {
-  padding: 20px;
+  padding: 4px;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  grid-gap: 20px;
+  grid-gap: 16px;
   overflow-x: auto;
+  background-color: aquamarine;
 }
 
 .clear-area {

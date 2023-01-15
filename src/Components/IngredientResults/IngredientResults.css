@@ -1,5 +1,5 @@
 .select-ing-header {
-  font-size: 1.7em;
+  font-size: 1.3em;
   width: 75%;
   text-align: center;
 }
@@ -8,9 +8,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* min-height: 10vh; */
-  /* max-height: 42vh; */
-  height: 42vh;
+  min-height: 25vh;
+  max-height: 34vh;
+  /* height: 33vh; */
   overflow-x: auto;
   /* overflow-y: scroll; */
   border-style: solid;

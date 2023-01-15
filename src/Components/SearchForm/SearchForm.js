@@ -28,19 +28,21 @@ const SearchForm = ({makeNamesList}) => {
     <form className='search-form'>
       <div className='search-type'>
         <p className='search-input-heading'>Know What Cocktail You're Searching For?</p>
-        <input
-          type='text'
-          name='cocktail-name'
-          placeholder='Search by name'
-          value={nameInput}
-          onChange={event => setNameInput(event.target.value)}
-        />
-        <Link to={`/nameResults/${nameInput}`}>
-          <button className='search-button' type='button'>Find</button>
-        </Link>
+        <div className='search-name-div'>
+          <input
+            type='text'
+            name='cocktail-name'
+            placeholder='Search by name'
+            value={nameInput}
+            onChange={event => setNameInput(event.target.value)}
+          />
+          <Link to={`/nameResults/${nameInput}`}>
+            <button className='search-button' type='button'>Find</button>
+          </Link>
+        </div>
       </div>
       <div className='search-type'>
-        <p className='search-input-heading'>Or, Search By What's Inside</p>
+        <p className='search-input-heading'>Or, Search By What's Inside.</p>
         <input
           type='text'
           name='ingredient-name'

@@ -2,7 +2,7 @@ import React from 'react'
 import '../IngredientResults/IngredientResults.css'
 import Ingredient from '../Ingredient/Ingredient'
 
-const IngredientResults = ({ingredientSearchResults}) => {
+const IngredientResults = ({ingredientSearchResults, error}) => {
 
   const ingredients = ingredientSearchResults.map((ing, index) => {
     return (
@@ -13,14 +13,15 @@ const IngredientResults = ({ingredientSearchResults}) => {
   return (
     <>
       <section className='ingredient-results-area'>
-      {ingredientSearchResults.length !== 0 && 
+      {(!error && ingredientSearchResults.length !== 0) && 
         <h2 className='select-ing-header'>Select an ingredient to see cocktails that match</h2>
       }
-      {ingredientSearchResults.length !== 0 &&
+      {(!error && ingredientSearchResults.length !== 0) &&
         <div className='ingredients-results'>
           {ingredients}
         </div>
       }
+      {error && <h3>{error}</h3>}
     </section>
     </>
   )
