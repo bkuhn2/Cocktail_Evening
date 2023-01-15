@@ -20,7 +20,8 @@
 
 .cocktail-detail-image {
   position: relative;
-  width: 35em;
+  width: 95%;
+  max-width: 35em;
   object-fit: contain;
   object-position: middle;
   margin: 2em 2em 2em 2em

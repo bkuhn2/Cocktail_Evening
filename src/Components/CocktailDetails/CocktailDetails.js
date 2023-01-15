@@ -17,13 +17,13 @@ const CocktailDetails = ({addCocktail, eventOfferings}) => {
       .then(data => {
         console.log(data);
         if (!data.drinks || data.drinks.length === 0) {
-          throw new Error(`Looks like we're missing some data here, we'll get this corrected soon.`)
+          throw new Error(`no data back`)
         } else {
           setSelectedCocktail(formatCocktailData(data.drinks[0]));
         }
       })
       .catch(error => {
-        setError(error.message);
+        setError(`Looks like there's some missing data or an error, try another cocktail or check with site administrator.`);
       })
   }, [cocktailID]);
 
