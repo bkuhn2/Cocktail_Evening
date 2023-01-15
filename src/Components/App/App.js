@@ -4,6 +4,7 @@ import '../App/App.css'
 import CocktailDetails from '../CocktailDetails/CocktailDetails';
 import Home from '../Home/Home';
 import MyEvent from '../MyEvent/MyEvent';
+import NoMatch from '../NoMatch/NoMatch';
 
 const App = () => {
 
@@ -35,9 +36,7 @@ const App = () => {
         removeCocktail={removeCocktail}
         />} 
       />
-      {/* Route for bad URL */}
-      {/* redirect /search to just Home */}
-      {/* redirect /cocktaildetails to Home */}
+      <Route path='*' element={<NoMatch />}/>
     </Routes>
   );
 }
