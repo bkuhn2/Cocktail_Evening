@@ -8,19 +8,28 @@ import { formatCocktailData, generateIngredients } from '../../Utilities/CleanUp
 const CocktailDetails = ({addCocktail, eventOfferings}) => {
 
   const [selectedCocktail, setSelectedCocktail] = useState();
-  //error state
+  const [error, setError] = useState('');
   const [saved, setSaved] = useState(false);
   let cocktailID = useParams().id;
 
   useEffect(() => {
     fetchCocktailData(`https://www.thecocktaildb.com/api/json/v2/9973533/lookup.php?i=${cocktailID}`)
       .then(data => {
-        setSelectedCocktail(formatCocktailData(data.drinks[0]));
+        console.log(data);
+        if (!data.drinks || data.drinks.length === 0) {
+          throw new Error(`Looks like we're missing some data here, we'll get this corrected soon.`)
+        } else {
+          setSelectedCocktail(formatCocktailData(data.drinks[0]));
+        }
+      })
+      .catch(error => {
+        setError(error.message);
       })
   }, [cocktailID]);
 
   useEffect(() => {
     if (selectedCocktail) {
+      setError('');
       evaluateIfSaved();
     }
   }, [selectedCocktail])
@@ -50,8 +59,9 @@ const CocktailDetails = ({addCocktail, eventOfferings}) => {
   return (
     <main className='details-page'>
       <Header />
-      {!selectedCocktail && <h2>be right there with your request</h2>}
-      {selectedCocktail &&
+      {error && <h2 className='detail-status-message'>{error}</h2>}
+      {(!selectedCocktail && !error) && <h2 className='detail-status-message'>Be right there with your request...</h2>}
+      {(selectedCocktail && !error) &&
         <section className='cocktail-details'>
           <img className='cocktail-detail-image' src={selectedCocktail.image} alt={`Image of ${selectedCocktail.name}`}/>
           <div className='cocktail-details-area'>
