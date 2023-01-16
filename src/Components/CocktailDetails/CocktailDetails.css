@@ -10,11 +10,11 @@
     background: linear-gradient(10deg, rgba(99, 84, 88, 0.38) 19%, rgba(46, 36, 33, 0.779) 83%), url(../../Images/horizontal-3.jpg);
     background-size: cover;
     background-attachment: fixed;
+    color: rgb(244, 239, 232);
+    text-shadow: 3px 2px 2px #000000df;
   }
   
   .cocktail-details {
-    border-style: solid;
-    border-color: rgb(48, 44, 245);
     margin: auto;
     height: 80vh;
     width: 94vw;
@@ -35,10 +35,14 @@
 
   .selected-cocktail-ingredients-header {
     font-size: 1.5em;
+    color: rgba(224, 227, 153, 0.877);
+    text-shadow: 3px 2px 2px #000000df;  
   }
 
   .selected-cocktail-ingredients-list {
     font-size: 1.2em;
+    color: rgba(224, 227, 153, 0.877);
+    text-shadow: 3px 2px 2px #000000df;  
   }
 
   .selected-cocktail-instructions {
@@ -46,9 +50,12 @@
   }
 
   .add-button {
-    width: 50%;
+    width: 35%;
     font-size: 1.2em;
     margin-top: 1.7em;
+    background-color: rgba(165, 230, 95, 0.727);
+    color: black;
+    border-radius: 15px;
   }
 
   .saved-message {
@@ -63,7 +70,10 @@
     max-width: 38em;
     object-fit: contain;
     object-position: middle;
-    margin: 5em 1em 2em 2em
+    margin: 5em 1em 2em 2em;
+    border-style: solid;
+    border-color: rgba(239, 236, 232, 0.73);
+    border-radius: 9px; 
   }
   
   .cocktail-detail-image::after {
@@ -74,12 +84,16 @@
   
   .cocktail-details-area {
     border-style: solid;
-    border-color: rgb(3, 173, 51);
+    border-color: rgba(239, 236, 232, 0.73);
+    border-width: 3px;
+    border-radius: 13px;
+    background-color: rgba(27, 27, 27, 0.773);
     width: 45vw;
-    height: 60vh;
+    min-height: 34em;    
     margin: 5em 2em 2em 1em;
     display: flex;
     flex-direction: column;
+    padding: 2em;
   }
   
   .detail-status-message {
@@ -100,11 +114,11 @@
     background: linear-gradient(10deg, rgba(99, 84, 88, 0.38) 19%, rgba(46, 36, 33, 0.779) 83%), url(../../Images/square-1.jpg);
     background-size: cover;
     background-attachment: fixed;
+    color: rgb(244, 239, 232);
+    text-shadow: 3px 2px 2px #000000df;
   }
   
   .cocktail-details {
-    border-style: solid;
-    border-color: rgb(48, 44, 245);
     margin: auto;
     height: 80vh;
     width: 98vw;
@@ -124,10 +138,14 @@
 
   .selected-cocktail-ingredients-header {
     font-size: 1.4em;
+    color: rgba(224, 227, 153, 0.877);
+    text-shadow: 3px 2px 2px #000000df;  
   }
 
   .selected-cocktail-ingredients-list {
     font-size: 1.1em;
+    color: rgba(224, 227, 153, 0.877);
+    text-shadow: 3px 2px 2px #000000df;  
   }
 
   .selected-cocktail-instructions {
@@ -138,6 +156,9 @@
     width: 60%;
     font-size: 1.1em;
     margin-top: 1.7em;
+    background-color: rgba(165, 230, 95, 0.727);
+    color: black;
+    border-radius: 12px;
   }
 
   .saved-message {
@@ -151,7 +172,10 @@
     /* max-width: 34em; */
     object-fit: contain;
     object-position: middle;
-    margin: 5em 1em 2em 2em
+    margin: 5em 1em 2em 2em;
+    border-style: solid;
+    border-color: rgba(239, 236, 232, 0.73);
+    border-radius: 9px; 
   }
   
   .cocktail-detail-image::after {
@@ -162,12 +186,16 @@
   
   .cocktail-details-area {
     border-style: solid;
-    border-color: rgb(3, 173, 51);
+    border-color: rgba(239, 236, 232, 0.73);
+    border-width: 3px;
+    border-radius: 13px;
+    background-color: rgba(27, 27, 27, 0.735);
     width: 45vw;
-    height: 60vh;
+    min-height: 32em;
     margin: 5em 2em 2em .6em;
     display: flex;
     flex-direction: column;
+    padding: 1.5em;
   }
   
   .detail-status-message {
@@ -188,11 +216,11 @@
     background: linear-gradient(10deg, rgba(99, 84, 88, 0.38) 19%, rgba(104, 90, 86, 0.779) 83%), url(../../Images/vertical-3.jpg);
     background-size: cover;
     background-attachment: fixed;
+    color: rgb(244, 239, 232);
+    text-shadow: 3px 2px 2px #000000df;
   }
   
   .cocktail-details {
-    border-style: solid;
-    border-color: rgb(48, 44, 245);
     margin: auto;
     height: 100%;
     width: 92vw;
@@ -205,7 +233,7 @@
   .selected-cocktail-name {
     font-size: 1.8em;
     text-align: center;
-    margin-top: .5em;
+    margin-top: .3em;
   }
 
   .selected-cocktail-glass {
@@ -238,6 +266,9 @@
     font-size: 1em;
     margin-top: 1.7em;
     margin-bottom: 1.7em;
+    background-color: rgba(165, 230, 95, 0.727);
+    color: black;
+    border-radius: 10px;
   }
 
   .saved-message {
@@ -252,6 +283,9 @@
     object-fit: contain;
     object-position: middle;
     margin-top: 2em;
+    border-style: solid;
+    border-color: rgba(239, 236, 232, 0.73);
+    border-radius: 9px;
   }
   
   .cocktail-detail-image::after {
@@ -262,13 +296,18 @@
   
   .cocktail-details-area {
     border-style: solid;
-    border-color: rgb(3, 173, 51);
+    border-color: rgba(239, 236, 232, 0.73);
+    border-width: 3px;
+    border-radius: 13px;
+    background-color: rgba(27, 27, 27, 0.735);
     width: 90%;
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-right: 3em;
     margin-left: 3em;
+    margin-top: 2em;
+    padding: .7em;
   }
   
   .detail-status-message {
