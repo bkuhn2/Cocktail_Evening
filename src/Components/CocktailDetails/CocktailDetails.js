@@ -78,7 +78,7 @@ const CocktailDetails = ({addCocktail, eventOfferings}) => {
             {!saved && 
               <button onClick={event => addToEvent(event)} className='add-button' type='button'>Add this to my event offerings</button>
             }
-            {saved && <p>This cocktail is included in your event offering.</p>} 
+            {saved && <p className='saved-message'>This cocktail is included in your event offering.</p>} 
           </div>
         </section>
       }
