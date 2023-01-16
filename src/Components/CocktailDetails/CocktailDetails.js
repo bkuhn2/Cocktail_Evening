@@ -17,14 +17,15 @@ const CocktailDetails = ({addCocktail, eventOfferings}) => {
   useEffect(() => {
     fetchCocktailData(`https://www.thecocktaildb.com/api/json/v2/9973533/lookup.php?i=${cocktailID}`)
       .then(data => {
+        console.log(data);
         if (!data.drinks || data.drinks.length === 0) {
-          throw new Error(`no data back`)
+          throw new Error(`Looks like there's some missing data or an error, try another cocktail or check with site administrator.`)
         } else {
           setSelectedCocktail(formatCocktailData(data.drinks[0]));
         }
       })
       .catch(error => {
-        setError(`Looks like there's some missing data or an error, try another cocktail or check with site administrator.`);
+        setError(error.message);
       })
   }, [cocktailID]);
 
@@ -66,14 +67,14 @@ const CocktailDetails = ({addCocktail, eventOfferings}) => {
         <section className='cocktail-details'>
           <img className='cocktail-detail-image' src={selectedCocktail.image} alt={`Image of ${selectedCocktail.name}`}/>
           <div className='cocktail-details-area'>
-            <h2>{selectedCocktail.name}</h2>
-            <p>{`Served in a ${selectedCocktail.glass}`}</p>
+            <h2 className='selected-cocktail-name'>{selectedCocktail.name}</h2>
+            <p className='selected-cocktail-glass'>{`Served in a ${selectedCocktail.glass}`}</p>
             {!selectedCocktail.hasAlcohol && <p>Non-alcoholic</p>}
-            <p>Ingredients:</p>
-            <ul>
+            <p className='selected-cocktail-ingredients-header'>Ingredients:</p>
+            <ul className='selected-cocktail-ingredients-list'>
               {makeIngredientList()}
             </ul>
-            <p>{selectedCocktail.instructions}</p>
+            <p className='selected-cocktail-instructions'>{selectedCocktail.instructions}</p>
             {!saved && 
               <button onClick={event => addToEvent(event)} className='add-button' type='button'>Add this to my event offerings</button>
             }
