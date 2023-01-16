@@ -17,7 +17,6 @@ const CocktailDetails = ({addCocktail, eventOfferings}) => {
   useEffect(() => {
     fetchCocktailData(`https://www.thecocktaildb.com/api/json/v2/9973533/lookup.php?i=${cocktailID}`)
       .then(data => {
-        console.log(data);
         if (!data.drinks || data.drinks.length === 0) {
           throw new Error(`Looks like there's some missing data or an error, try another cocktail or check with site administrator.`)
         } else {

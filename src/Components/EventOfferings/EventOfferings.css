@@ -1,11 +1,53 @@
-.event-cocktails-section {
-  width: 88vw;
-  height: 100%;
-  margin: auto;
-  border-style: solid;
-  border-color: blueviolet;
-  display: flex;
-  flex-direction: row;
-  overflow-x: auto;
+/* BIG --------------------------------------------------------*/
+@media screen and (min-width: 1400px) {
+  .event-cocktails-section {
+    width: 94vw;
+    height: 100%;
+    margin: auto;
+    border-style: solid;
+    border-color: rgba(239, 236, 232, 0.73);
+    border-width: 3px;
+    border-radius: 13px;
+    background-color: rgba(27, 27, 27, 0.535);
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    padding: .7em;
+  }
+}
 
+/* MEDIUM --------------------------------------------------------*/
+@media screen and (max-width: 1400px) and (min-width: 750px) {
+  .event-cocktails-section {
+    width: 92vw;
+    height: 100%;
+    margin: auto;
+    border-style: solid;
+    border-color: rgba(239, 236, 232, 0.73);
+    border-width: 3px;
+    border-radius: 13px;
+    background-color: rgba(27, 27, 27, 0.535);
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    padding: .4em;
+  }
+}
+
+/* IPHONE --------------------------------------------------------*/
+@media screen and (max-width: 750px) {
+  .event-cocktails-section {
+    width: 92vw;
+    height: 100%;
+    margin: auto;
+    border-style: solid;
+    border-color: rgba(239, 236, 232, 0.73);
+    border-width: 3px;
+    border-radius: 13px;
+    background-color: rgba(27, 27, 27, 0.535);
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    padding: .3em;
+  }
 }

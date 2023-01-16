@@ -1,13 +1,83 @@
-.wrong-way-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 5em;
+/* BIG --------------------------------------------------------*/
+@media screen and (min-width: 1400px) {
+  .wrong-way-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5em;
+  }
+  
+  .go-back-button {
+    cursor: pointer;
+    font-size: 1.3em;
+    padding-left: 2em;
+    padding-right: 2em;
+  }
+
+  .no-match-error-message {
+    text-align: center;
+    width: 50%;
+    color: rgb(253, 245, 234);
+    text-shadow: 3px 2px 2px #000000df;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 3em;
+  }
+}
+
+/* MEDIUM --------------------------------------------------------*/
+@media screen and (max-width: 1400px) and (min-width: 750px) {
+  .wrong-way-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5em;
+  }
+  
+  .go-back-button {
+    cursor: pointer;
+    font-size: 1.3em;
+    padding-left: 2em;
+    padding-right: 2em;
+  }
+
+  .no-match-error-message {
+    text-align: center;
+    width: 55%;
+    color: rgb(253, 245, 234);
+    text-shadow: 3px 2px 2px #000000df;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 2.5em;
+  }
+}
+
+/* IPHONE --------------------------------------------------------*/
+@media screen and (max-width: 750px) {
+  .wrong-way-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5em;
+  }
+  
+  .go-back-button {
+    cursor: pointer;
+    font-size: 1.3em;
+    padding-left: 2em;
+    padding-right: 2em;
+  }
+
+  .no-match-error-message {
+    text-align: center;
+    width: 70%;
+    color: rgb(253, 245, 234);
+    text-shadow: 3px 2px 2px #000000df;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 2em;
+  }
 }
 
 .go-back-button {
-  cursor: pointer;
-  font-size: 1.3em;
-  padding-left: 2em;
-  padding-right: 2em;
+  background-color: rgba(165, 230, 95, 0.727);
+  color: black;
+  border-radius: 10px;
 }

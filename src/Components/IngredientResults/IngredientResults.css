@@ -1,26 +1,110 @@
-.select-ing-header {
-  font-size: 1.3em;
-  width: 75%;
+
+/* BIG --------------------------------------------------------*/
+@media screen and (min-width: 1400px) {
+  .select-ing-header {
+    font-size: 1.3em;
+    width: 75%;
+    text-align: center;
+    color: rgb(244, 239, 232);
+    text-shadow: 3px 2px 2px #000000df;
+    font-family: 'Barlow Condensed', sans-serif;
+  }
+  
+  .ingredient-results-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 33vh;
+    overflow-x: auto;
+    border-style: solid;
+    border-color: rgba(239, 236, 232, 0.73);
+    border-width: 3px;
+    border-radius: 13px;
+    background-color: rgba(9, 33, 8, 0.535);
+    margin-top: 1em;
+    margin-bottom: 2em;
+  }
+  
+  .ingredients-results {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* MEDIUM --------------------------------------------------------*/
+@media screen and (max-width: 1400px) and (min-width: 750px) {
+  .select-ing-header {
+    font-size: 1.3em;
+    width: 75%;
+    text-align: center;
+    color: rgb(244, 239, 232);
+    text-shadow: 3px 2px 2px #000000df;
+    font-family: 'Barlow Condensed', sans-serif;
+
+  }
+  
+  .ingredient-results-area {
+    margin: auto;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 33vh;
+    overflow-x: auto;
+    border-style: solid;
+    border-color: rgba(239, 236, 232, 0.73);
+    border-width: 3px;
+    border-radius: 13px;
+    background-color: rgba(9, 33, 8, 0.535);
+    margin-top: 1em;
+  }
+  
+  .ingredients-results {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* IPHONE --------------------------------------------------------*/
+@media screen and (max-width: 750px) {
+  .select-ing-header {
+    font-size: .9em;
+    width: 55%;
+    text-align: center;
+    color: rgb(244, 239, 232);
+    text-shadow: 3px 2px 2px #000000df;
+    font-family: 'Barlow Condensed', sans-serif;
+  }
+  
+  .ingredient-results-area {
+    margin: auto;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 33vh;
+    overflow-x: auto;
+    /* overflow-y: scroll; */
+    border-style: solid;
+    border-color: rgba(239, 236, 232, 0.73);
+    border-width: 3px;
+    border-radius: 13px;
+    background-color: rgba(9, 33, 8, 0.535);
+    margin-top: 1em;
+  }
+  
+  .ingredients-results {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.ing-error {
+  color: rgb(244, 239, 232);
+  text-shadow: 3px 2px 2px #000000df;
+  font-family: 'Barlow Condensed', sans-serif;
   text-align: center;
-}
-
-.ingredient-results-area {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-height: 25vh;
-  max-height: 34vh;
-  /* height: 33vh; */
-  overflow-x: auto;
-  /* overflow-y: scroll; */
-  border-style: solid;
-  border-color: greenyellow;
-  margin-top: 1em;
-}
-
-.ingredients-results {
-  display: flex;
-  flex-direction: column-reverse;
-  border-style: solid;
-  border-color: rgba(31, 109, 34, 0.648);
 }

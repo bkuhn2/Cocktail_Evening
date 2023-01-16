@@ -21,8 +21,8 @@ const SearchResultsDisplay = ({searchResults}) => {
 
   return (
     <>
-      {cocktailName && <h2>{`"${cocktailName}"`}</h2>}
-      {cocktailIngredient && <h2>{`"${cocktailIngredient}"`}</h2>}
+      {cocktailName && <h2 className='search-result-heading'>{`"${cocktailName}"`}</h2>}
+      {cocktailIngredient && <h2 className='search-result-heading'>{`"${cocktailIngredient}"`}</h2>}
       <Link to='/' className='clear-area'>
         <button className='clear-button' type='button'>clear results</button>
       </Link>
