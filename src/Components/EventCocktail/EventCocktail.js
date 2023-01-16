@@ -21,15 +21,17 @@ const EventCocktail = ({cocktail, removeCocktail}) => {
   }
 
   return (
-    <div className='event-cocktail-item'>
-      <p className='event-cocktail-name'>{cocktail.name}</p>
-      <Link to={`/cocktaildetails/${cocktail.id}`}>
-        <img className='event-cocktail-image' src={cocktail.image} alt={`${cocktail.name} image`}/>
-      </Link>
-      <ul className='event-cocktails-ingredient-list'>
-        {makeIngredientList()}
-      </ul>
-      <button className='delete-button' onClick={event => handleDelete(event)}>Remove from my event</button>
+    <div className='cocktail-container'>
+      <div className='event-cocktail-item'>
+        <p className='event-cocktail-name'>{cocktail.name}</p>
+        <Link to={`/cocktaildetails/${cocktail.id}`}>
+          <img className='event-cocktail-image' src={cocktail.image} alt={`${cocktail.name} image`}/>
+        </Link>
+        <ul className='event-cocktails-ingredient-list'>
+          {makeIngredientList()}
+        </ul>
+      </div>
+        <button className='delete-button' onClick={event => handleDelete(event)}>Remove from my event</button>
     </div>
   )
 }

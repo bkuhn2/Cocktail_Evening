@@ -1,34 +1,74 @@
 /* BIG --------------------------------------------------------*/
 @media screen and (min-width: 1400px) {
-
+  .event-page {
+    height: 100vh;
+    width: 100vw;
+    border-style: solid;
+    border-color: hotpink;
+    background-color: antiquewhite;
+    overflow-x: auto;
+  }
+  
+  .event-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  }
+  
+  .event-heading {
+    text-align: center;
+    font-size: 2.2em;
+    margin-top: 1.7em;
+    margin-bottom: 1.1em;
+  }
 }
 
 /* MEDIUM --------------------------------------------------------*/
 @media screen and (max-width: 1400px) and (min-width: 750px) {
+  .event-page {
+    height: 100vh;
+    width: 100vw;
+    border-style: solid;
+    border-color: hotpink;
+    background-color: antiquewhite;
+    overflow-x: auto;
+  }
+  
+  .event-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  }
+  
+  .event-heading {
+    text-align: center;
+    font-size: 2em;
+    margin-top: 1.7em;
+    margin-bottom: 1.1em;
 
+  }
 }
 
 /* IPHONE --------------------------------------------------------*/
 @media screen and (max-width: 750px) {
-
-}
-
-
-.event-page {
-  height: 100vh;
-  width: 100vw;
-  border-style: solid;
-  border-color: hotpink;
-  background-color: antiquewhite;
-  overflow-x: auto;
-}
-
-.event-section {
-display: flex;
-flex-direction: column;
-align-items: center;
-}
-
-.event-heading {
-  font-size: 2.2em;
+  .event-page {
+    height: 100vh;
+    width: 100vw;
+    border-style: solid;
+    border-color: hotpink;
+    background-color: antiquewhite;
+    overflow-x: auto;
+  }
+  
+  .event-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  }
+  
+  .event-heading {
+    text-align: center;
+    font-size: 1.1em;
+    margin-top: 2.7em;
+  }
 }
