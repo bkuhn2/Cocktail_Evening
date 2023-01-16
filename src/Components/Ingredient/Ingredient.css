@@ -1,24 +1,35 @@
 /* BIG --------------------------------------------------------*/
 @media screen and (min-width: 1400px) {
-
+  .ingredient {
+    text-align: center;
+    font-size:1.1em;
+    width: 100%;
+    height: 2em;
+    margin-bottom: 1em;
+    cursor: pointer;
+  }
 }
 
 /* MEDIUM --------------------------------------------------------*/
 @media screen and (max-width: 1400px) and (min-width: 750px) {
-
+  .ingredient {
+    text-align: center;
+    font-size:1.1em;
+    width: 100%;
+    height: 2em;
+    margin-bottom: 1em;
+    cursor: pointer;
+  }
 }
 
 /* IPHONE --------------------------------------------------------*/
 @media screen and (max-width: 750px) {
-
-}
-
-
-.ingredient {
-  text-align: center;
-  font-size:1.1em;
-  width: 20em;
-  height: 2em;
-  margin-bottom: 1em;
-  cursor: pointer;
+  .ingredient {
+    text-align: center;
+    font-size: 1em;
+    width: 100%;
+    height: 2.1em;
+    margin-bottom: 1.2em;
+    cursor: pointer;
+  }
 }
