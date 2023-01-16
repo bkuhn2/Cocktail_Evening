@@ -44,7 +44,8 @@ const Home = () => {
       setError('');
       setSearchResults([])
     };
-  }, [cocktailName, cocktailIngredient])
+  }, [cocktailName, cocktailIngredient]);
+  
 
   const findCocktailsByName = () => {
     fetchCocktailData(`https://www.thecocktaildb.com/api/json/v2/9973533/search.php?s=${cocktailName}`)
@@ -64,7 +65,7 @@ const Home = () => {
     fetchCocktailData(`https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=${cocktailIngredient}`)
       .then(data => {
         if (!data.drinks || data.drinks === 'None Found') {
-          throw new Error(`Apologies, we couldn't find drinks with ${cocktailIngredient}, but check back as we're always updated our storerooms.`)
+          throw new Error(`Apologies, we couldn't find drinks with ${cocktailIngredient}, but check back as we're always updating our storerooms.`)
         } else {
           setSearchResults(formatSearchResults(data.drinks));
         }
