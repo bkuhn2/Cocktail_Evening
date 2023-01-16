@@ -21,7 +21,10 @@ const Home = () => {
 
   useEffect(() => {
     fetchCocktailData(`https://www.thecocktaildb.com/api/json/v2/9973533/list.php?i=list`)
-      .then(data => setAllIngredients(simplifyIngredients(data.drinks)))
+      .then(data => {
+        console.log('initial data: ', data);
+        setAllIngredients(simplifyIngredients(data.drinks))
+      })
       .catch(error => {
         setAPIError('Failed to load page, our apologies.')
       })
@@ -47,6 +50,7 @@ const Home = () => {
   const findCocktailsByName = () => {
     fetchCocktailData(`https://www.thecocktaildb.com/api/json/v2/9973533/search.php?s=${cocktailName}`)
       .then(data => {
+        console.log('name data: ', data);
         if (!data.drinks) {
           throw new Error(`Apologies, we couldn't find anything matching "${cocktailName}."`)
         } else {
@@ -82,7 +86,7 @@ const Home = () => {
   }
 
   const findMatchingIngredients = (input) => {
-    const searchWords = input.toLowerCase().split(' ').filter(word =>  word !== ''); //error handling for things like periods, comma, slashes
+    const searchWords = input.toLowerCase().split(' ').filter(word =>  word !== '');
     const ingredientMatches = searchWords.reduce((matchingWords, word) => {
       const matches = allIngredients.filter(ing => ing.toLowerCase().includes(word));
       matches.forEach(match => {

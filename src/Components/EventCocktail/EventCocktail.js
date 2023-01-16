@@ -26,7 +26,7 @@ const EventCocktail = ({cocktail, removeCocktail}) => {
       <Link to={`/cocktaildetails/${cocktail.id}`}>
         <img className='event-cocktail-image' src={cocktail.image} alt={`${cocktail.name} image`}/>
       </Link>
-      <ul>
+      <ul className='event-cocktails-ingredient-list'>
         {makeIngredientList()}
       </ul>
       <button className='delete-button' onClick={event => handleDelete(event)}>Remove from my event</button>
