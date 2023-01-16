@@ -22,7 +22,6 @@ const Home = () => {
   useEffect(() => {
     fetchCocktailData(`https://www.thecocktaildb.com/api/json/v2/9973533/list.php?i=list`)
       .then(data => {
-        console.log('initial data: ', data);
         setAllIngredients(simplifyIngredients(data.drinks))
       })
       .catch(error => {
@@ -50,7 +49,6 @@ const Home = () => {
   const findCocktailsByName = () => {
     fetchCocktailData(`https://www.thecocktaildb.com/api/json/v2/9973533/search.php?s=${cocktailName}`)
       .then(data => {
-        console.log('name data: ', data);
         if (!data.drinks) {
           throw new Error(`Apologies, we couldn't find anything matching "${cocktailName}."`)
         } else {
@@ -98,9 +96,7 @@ const Home = () => {
     }, []);
     if (ingredientMatches.length === 0) {
       setIngError(`Couldn't find any matching ingredients.`);
-      console.log('error ingredientMatches: ', ingredientMatches);
     } else {
-      console.log('success ingredientMatches: ', ingredientMatches);
       setIngError('');
       setIngredientSearchResults(ingredientMatches);
     }
@@ -110,7 +106,7 @@ const Home = () => {
     <main className='home-page'>
       <Header />
       <h1 className='home-title'>Peruse our Plethora of Cocktails</h1>
-      {APIerror && <h2>{APIerror}</h2>}
+      {APIerror && <h2 className='home-error-message'>{APIerror}</h2>}
       {!APIerror && 
         <section className='search-section'>
           <div className='search-input-area'>
@@ -124,7 +120,7 @@ const Home = () => {
           </div>
           <section className='search-display'>
             {(!error && searchResults.length !== 0) && <SearchResultsDisplay searchResults={searchResults}/>}
-            {error && <h2>{error}</h2>}
+            {error && <h2 className='home-error-message'>{error}</h2>}
           </section>
         </section>
       }

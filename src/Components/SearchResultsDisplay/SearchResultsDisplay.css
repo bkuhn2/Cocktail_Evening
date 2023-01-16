@@ -6,10 +6,10 @@
   }
 
   .search-results-display {
-    padding: 4px;
+    padding: 16px;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    grid-gap: 16px;
+    grid-gap: 10px;
     overflow-x: auto;
     background-color: aquamarine;
   }
@@ -34,10 +34,11 @@
   }
 
   .search-results-display {
-    padding: 4px;
+    /* max-width: 95vw; */
+    padding: 5px;
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-gap: 16px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1px;
     overflow-x: auto;
     background-color: aquamarine;
   }

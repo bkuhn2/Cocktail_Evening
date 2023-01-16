@@ -33,7 +33,7 @@
     border-color: red;
     display: flex;
     flex-direction: column;
-    width: 55em;
+    width: 56em;
     /* min-height: 5vh; */
     height: 69vh;
     margin-left: 1em;
@@ -84,10 +84,11 @@
     border-color: red;
     display: flex;
     flex-direction: column;
-    width: 55em;
+    width: 100%;
     min-height: 10vh;
     margin-left: 1em;
     margin-top: 2em;
+    margin-bottom: 2em;
   }
 
   .search-input-area {
@@ -137,6 +138,7 @@
     width: 100%;
     min-height: 10vh;
     margin-top: 2em;
+    margin-bottom: 2em;
   }
 
   .search-input-area {
@@ -148,3 +150,7 @@
 }
 
 
+.home-error-message {
+  text-align: center;
+  margin-top: 6em;
+}

@@ -1,29 +1,66 @@
 /* BIG --------------------------------------------------------*/
 @media screen and (min-width: 1400px) {
+  .wrong-way-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5em;
+  }
+  
+  .go-back-button {
+    cursor: pointer;
+    font-size: 1.3em;
+    padding-left: 2em;
+    padding-right: 2em;
+  }
 
+  .no-match-error-message {
+    text-align: center;
+    width: 70%;
+  }
 }
 
 /* MEDIUM --------------------------------------------------------*/
 @media screen and (max-width: 1400px) and (min-width: 750px) {
+  .wrong-way-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5em;
+  }
+  
+  .go-back-button {
+    cursor: pointer;
+    font-size: 1.3em;
+    padding-left: 2em;
+    padding-right: 2em;
+  }
 
+  .no-match-error-message {
+    text-align: center;
+    width: 55%;
+  }
 }
 
 /* IPHONE --------------------------------------------------------*/
 @media screen and (max-width: 750px) {
+  .wrong-way-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5em;
+  }
+  
+  .go-back-button {
+    cursor: pointer;
+    font-size: 1.3em;
+    padding-left: 2em;
+    padding-right: 2em;
+  }
 
+  .no-match-error-message {
+    text-align: center;
+    width: 70%;
+  }
 }
 
-
-.wrong-way-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 5em;
-}
-
-.go-back-button {
-  cursor: pointer;
-  font-size: 1.3em;
-  padding-left: 2em;
-  padding-right: 2em;
-}

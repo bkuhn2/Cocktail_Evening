@@ -7,12 +7,13 @@
   }
   
   .result-image {
-    height: 8em;
+    height: 8.7em;
   }
   
   .result-text {
     font-size: 1.3em;
     text-align: center;
+    margin-bottom: 1.4em;
   }}
 
 /* MEDIUM --------------------------------------------------------*/
@@ -30,6 +31,7 @@
   .result-text {
     font-size: 1.2em;
     text-align: center;
+    margin-bottom: 1.4em;
   }
 }
 
@@ -48,5 +50,6 @@
   .result-text {
     font-size: 1em;
     text-align: center;
+    margin-bottom: 1.4em;
   }
 }

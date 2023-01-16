@@ -153,12 +153,16 @@
   ul {
     padding-left: 1em;
     padding-right: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   .event-ingredient-li {
     font-style: italic;
-    font-size: .9em;
+    font-size: .8em;
     display: block;
     text-align: center;
+    margin-bottom: .4em;
   }
   
   .delete-button {
