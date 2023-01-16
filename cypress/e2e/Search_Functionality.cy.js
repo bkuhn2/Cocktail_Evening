@@ -31,16 +31,16 @@ describe('Search Functionality', () => {
 
     cy.get('button').click();
 
-    cy.contains("margarita")
-    cy.get('img[src="https://www.thecocktaildb.com/images/media/drink/5noda61589575158.jpg"]')
+    cy.contains("margarita");
+    cy.get('img').eq(0).should('have.attr', 'src').should('eq', 'https://www.thecocktaildb.com/images/media/drink/5noda61589575158.jpg')
+    cy.get('img').eq(1).should('have.attr', 'src').should('eq', 'https://www.thecocktaildb.com/images/media/drink/bry4qh1582751040.jpg')
     cy.contains("Margarita")
-    cy.get('img[src="https://www.thecocktaildb.com/images/media/drink/bry4qh1582751040.jpg"]')
     cy.contains("Blue Margarita")
   });
 
   it('Should be able to clear the results', () => {
     cy.get('input[name="cocktail-name"]')
-    .type('margarita');
+      .type('margarita');
     cy.get('button').click();
 
     cy.get('.clear-button').click();

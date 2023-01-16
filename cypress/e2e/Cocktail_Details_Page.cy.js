@@ -9,7 +9,7 @@ describe('Cocktail Details Page', () => {
       .type('margarita');
     cy.get('button').click();
     cy.get('.result').eq(0).click();
-  })
+  });
 
   it('Should have a header', () => {
     cy.get('header')
