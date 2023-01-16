@@ -2,7 +2,7 @@ import React from 'react'
 import '../MyEvent/MyEvent.css'
 import Header from '../Header/Header'
 import EventOfferings from '../EventOfferings/EventOfferings'
-import PropTypes, { object } from 'prop-types'
+import PropTypes from 'prop-types'
 
 const MyEvent = ({eventOfferings, removeCocktail}) => {
   return (

@@ -134,6 +134,6 @@ describe ('Search Error Handling', () => {
     .type('butt');
 
     cy.get('button').eq(2).click();
-    cy.contains(`Apologies, we couldn't find drinks with Butter, but check back as we're always updated our storerooms.`)
+    cy.get('.home-error-message').should('have.text', `Apologies, we couldn't find drinks with Butter, but check back as we're always updating our storerooms.`)
   });
 });

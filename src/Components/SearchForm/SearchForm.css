@@ -20,8 +20,8 @@
     text-align: center;
     font-size: 2.4em;
     margin-bottom: .7em;
-    color: rgb(253, 245, 234);
-    text-shadow: 3px 2px 2px #000000df;
+    color: rgba(224, 227, 153, 0.877);
+    text-shadow: 3px 2px 2px #000000df;  
     font-family: 'Barlow Condensed', sans-serif;
   }
 
@@ -78,8 +78,8 @@
     text-align: center;
     font-size: 2.4em;
     margin-bottom: .7em;
-    color: rgb(253, 245, 234);
-    text-shadow: 3px 2px 2px #000000df;
+    color: rgba(224, 227, 153, 0.877);
+    text-shadow: 3px 2px 2px #000000df;  
     font-family: 'Barlow Condensed', sans-serif;
   }
 
@@ -138,8 +138,8 @@
     text-align: center;
     font-size: 1.8em;
     margin-bottom: .7em;
-    color: rgb(253, 245, 234);
-    text-shadow: 3px 2px 2px #000000df;
+    color: rgba(224, 227, 153, 0.877);
+    text-shadow: 3px 2px 2px #000000df;  
     font-family: 'Barlow Condensed', sans-serif;
   }
 

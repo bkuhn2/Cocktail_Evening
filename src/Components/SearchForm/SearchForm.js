@@ -4,8 +4,9 @@ import '../SearchForm/SearchForm.css'
 import PropTypes from 'prop-types'
 
 const SearchForm = ({makeNamesList}) => {
+
   const [nameInput, setNameInput] = useState('');
-  const [ingredientInput, setIngredientInput] = useState(''); //error handling for things like periods, comma, slashes
+  const [ingredientInput, setIngredientInput] = useState('');
   let cocktailName = useParams().name;
 
   useEffect(() => {
@@ -23,7 +24,7 @@ const SearchForm = ({makeNamesList}) => {
 
   useEffect(() => {
     setNameInput('')
-  }, [cocktailName])
+  }, [cocktailName]);
 
   const handleNameInput = (name) => {
     const formattedName = name.replace(/[\/\\#,%?<>^{}]/g, '');
