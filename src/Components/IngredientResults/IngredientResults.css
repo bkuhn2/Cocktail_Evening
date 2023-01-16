@@ -1,3 +1,20 @@
+
+/* BIG --------------------------------------------------------*/
+@media screen and (min-width: 1400px) {
+
+}
+
+/* MEDIUM --------------------------------------------------------*/
+@media screen and (max-width: 1400px) and (min-width: 750px) {
+
+}
+
+/* IPHONE --------------------------------------------------------*/
+@media screen and (max-width: 750px) {
+
+}
+
+
 .select-ing-header {
   font-size: 1.3em;
   width: 75%;
@@ -8,8 +25,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: 25vh;
-  max-height: 34vh;
+  height: 33vh;
   /* height: 33vh; */
   overflow-x: auto;
   /* overflow-y: scroll; */

@@ -125,10 +125,6 @@ const Home = () => {
           <section className='search-display'>
             {(!error && searchResults.length !== 0) && <SearchResultsDisplay searchResults={searchResults}/>}
             {error && <h2>{error}</h2>}
-            {/*conditional if no search results and no error and no ingreds, display text letting user know that results display here */}
-            {/* if there's an error, display that
-            if there's search results, display SearchResultsDisplay
-            */}
           </section>
         </section>
       }
