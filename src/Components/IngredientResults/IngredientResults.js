@@ -23,7 +23,7 @@ const IngredientResults = ({ingredientSearchResults, error}) => {
         </div>
       }
       {error && <h3 className='ing-error'>{error}</h3>}
-    </section>
+      </section>
     </>
   )
 }

@@ -2,7 +2,7 @@
 const simplifyIngredients = (rawData) => {
   return rawData.map(datum => {
     return datum.strIngredient1
-  })
+  });
 }
 
 const formatSearchResults = (rawData) => {
@@ -12,8 +12,8 @@ const formatSearchResults = (rawData) => {
       id: datum.idDrink,
       image: datum.strDrinkThumb
     }
-  })
-} //what if null/empty?
+  });
+} 
 
 const formatCocktailData = (rawData) => {
   const data = {
@@ -25,7 +25,7 @@ const formatCocktailData = (rawData) => {
     ingredients: generateIngredients(rawData),
     id: rawData.idDrink
   }
-  return data; // stress test if any of the data are missing one of these
+  return data;
 }
 
 const generateIngredients = (rawData) => {

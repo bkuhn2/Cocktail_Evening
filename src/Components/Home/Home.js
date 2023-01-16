@@ -35,14 +35,14 @@ const Home = () => {
       findCocktailsByName();
     } else {
       setError('');
-      setSearchResults([])
+      setSearchResults([]);
     };
     if (cocktailIngredient) {
       setError('');
       findCocktailsByIngredient();
     } else {
       setError('');
-      setSearchResults([])
+      setSearchResults([]);
     };
   }, [cocktailName, cocktailIngredient]);
   
@@ -51,7 +51,7 @@ const Home = () => {
     fetchCocktailData(`https://www.thecocktaildb.com/api/json/v2/9973533/search.php?s=${cocktailName}`)
       .then(data => {
         if (!data.drinks) {
-          throw new Error(`Apologies, we couldn't find anything matching "${cocktailName}."`)
+          throw new Error(`Apologies, we couldn't find anything matching "${cocktailName}."`);
         } else {
           setSearchResults(formatSearchResults(data.drinks));
         }

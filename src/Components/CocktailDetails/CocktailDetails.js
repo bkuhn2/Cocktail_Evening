@@ -3,8 +3,8 @@ import { useParams } from 'react-router-dom'
 import '../CocktailDetails/CocktailDetails.css'
 import Header from '../Header/Header'
 import fetchCocktailData from '../../Utilities/APIcalls'
-import { formatCocktailData, generateIngredients } from '../../Utilities/CleanUp'
-import PropTypes, { object } from 'prop-types'
+import { formatCocktailData } from '../../Utilities/CleanUp'
+import PropTypes from 'prop-types'
 
 
 const CocktailDetails = ({addCocktail, eventOfferings}) => {

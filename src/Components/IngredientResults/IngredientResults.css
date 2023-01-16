@@ -86,7 +86,6 @@
     align-items: center;
     height: 14vh;
     overflow-x: auto;
-    /* overflow-y: scroll; */
     border-style: solid;
     border-color: rgba(239, 236, 232, 0.73);
     border-width: 3px;
