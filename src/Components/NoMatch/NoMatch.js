@@ -8,7 +8,7 @@ const NoMatch = () => {
     <main>
       <Header />
       <section className='wrong-way-section'>
-        <h1 className='no-match-error-message'>Looks like something got a little mixed up, head back to the party</h1>
+        <h1 className='no-match-error-message'>Looks like something got a little mixed up, head back to the party.</h1>
         <Link to='/'>
           <button className='go-back-button'>OK</button>
         </Link>

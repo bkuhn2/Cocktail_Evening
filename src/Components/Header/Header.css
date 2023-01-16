@@ -9,12 +9,17 @@
     border-width: 2px;
     border-color: rgba(239, 236, 232, 0.73);
     background-color: rgb(22, 19, 0);
+    font-family: 'Kaushan Script', cursive;    
+    width: 99%;
+    margin: auto;
   }
   
   .page-title {
-    font-size: 3.3em;
+    font-size: 4.2em;
+    font-weight: 900;
     margin-bottom: .3em;
     color: rgb(244, 239, 232);
+    margin-left: .3em;
   }
 
   .nav-panel {
@@ -30,8 +35,8 @@
     margin-left: 1em;
     margin-right: 1em;
     text-decoration: none;
-    font-size: 2em;
-    margin-bottom: .1em;
+    font-size: 2.3em;
+    margin-bottom: 0em;
     color: rgb(166, 227, 101);
     text-shadow: 3px 2px 2px #000000df; 
  }
@@ -47,11 +52,16 @@
     border-width: 2px;
     border-color: rgba(239, 236, 232, 0.73);
     background-color: rgb(22, 19, 0);
+    font-family: 'Kaushan Script', cursive;  
+    width: 99%;
+    margin: auto;  
   }
 
   .page-title {
-    font-size: 2.5em;
+    font-size: 3em;
     color: rgb(244, 239, 232);
+    font-weight: 900;
+    margin-left: .2em;
   }
 
   .nav-panel {
@@ -69,7 +79,7 @@
     margin-left: 1em;
     margin-right: 1em;
     text-decoration: none;
-    font-size: 1.3em;
+    font-size: 1.5em;
     margin-bottom: .3em;
     margin-top: .3em;
     color: rgb(166, 227, 101);
@@ -87,11 +97,15 @@
     border-width: 2px;
     border-color: rgba(239, 236, 232, 0.73);
     background-color: rgb(22, 19, 0);
+    font-family: 'Kaushan Script', cursive;
+    width: 99%;
+    margin: auto;  
   }
 
   .page-title {
-    font-size: 1.4em;
+    font-size: 2.2em;
     color: rgb(244, 239, 232);
+    margin-left: .4em;
   }
 
   .nav-panel {
@@ -108,10 +122,11 @@
     margin-left: 1em;
     margin-right: 1em;
     text-decoration: none;
-    font-size: .9em;
-    margin-bottom: .3em;
+    font-size: 1.1em;
+    margin-bottom: .4em;
     margin-top: .3em;
     color: rgb(166, 227, 101);
     text-shadow: 3px 2px 2px #000000df; 
+    text-align: end;
  }
 }
