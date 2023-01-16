@@ -6,23 +6,25 @@
     height: 100vh;
     width: 100vw;
     border-style: solid;
-    border-color: hotpink;
-    background-color: antiquewhite;
+    border-color: rgb(2, 2, 2);
     overflow-x: auto;
+    background: linear-gradient(10deg, rgba(99, 84, 88, 0.38) 19%, rgba(46, 36, 33, 0.779) 83%), url(../../Images/horizontal-3.jpg);
+    background-size: cover;
+    background-attachment: fixed;
   }
 
   .home-title {
     text-align: center;
-    font-size: 2.2em;
+    font-size: 2.3em;
     margin-top: 1.7em;
     margin-bottom: 1.1em;
+    color: rgb(253, 245, 234);
+    text-shadow: 3px 2px 2px #000000df;
   }
 
   .search-section {
     margin: auto;
     width: 92vw;
-    border-style: solid;
-    border-color: rgba(251, 255, 16, 0.428);
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -30,21 +32,19 @@
   
   .search-display {
     border-style: solid;
-    border-color: red;
+    border-color: rgba(239, 236, 232, 0.73);
+    border-width: 3px;
+    border-radius: 13px;
+    background-color: rgba(27, 27, 27, 0.535);
     display: flex;
     flex-direction: column;
     width: 56em;
-    /* min-height: 5vh; */
     height: 69vh;
     margin-left: 1em;
   }
 
   .search-input-area {
-    /* height: 100%; */
     width: 45em;
-    /* height: 100%; */
-    border-style: solid;
-    border-color: blueviolet;
     margin-right: 1em;
   }
 }
@@ -57,8 +57,10 @@
     width: 100vw;
     border-style: solid;
     border-color: hotpink;
-    background-color: antiquewhite;
     overflow-x: auto;
+    background: linear-gradient(10deg, rgba(99, 84, 88, 0.38) 19%, rgba(46, 36, 33, 0.779) 83%), url(../../Images/square-1.jpg);
+    background-size: cover;
+    background-attachment: fixed;
   }
 
   .home-title {
@@ -66,13 +68,13 @@
     font-size: 2em;
     margin-top: 1.7em;
     margin-bottom: 1.1em;
+    color: rgb(253, 245, 234);
+    text-shadow: 3px 2px 2px #000000df;
   }
 
   .search-section {
     margin: auto;
     width: 92vw;
-    border-style: solid;
-    border-color: rgba(251, 255, 16, 0.428);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -81,7 +83,10 @@
   
   .search-display {
     border-style: solid;
-    border-color: red;
+    border-color: rgba(239, 236, 232, 0.73);
+    border-width: 3px;
+    border-radius: 13px;
+    background-color: rgba(27, 27, 27, 0.535);
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -92,11 +97,7 @@
   }
 
   .search-input-area {
-    /* height: 100%; */
     width: 45em;
-    /* height: 100%; */
-    border-style: solid;
-    border-color: blueviolet;
     margin-right: 1em;
   }
 }
@@ -108,22 +109,25 @@
     height: 100vh;
     width: 100vw;
     border-style: solid;
-    border-color: hotpink;
+    border-color: rgb(3, 3, 3);
     background-color: antiquewhite;
     overflow-x: auto;
+    background: linear-gradient(10deg, rgba(69, 59, 62, 0.38) 19%, rgba(41, 35, 33, 0.779) 83%), url(../../Images/vertical-3.jpg);
+    background-size: cover;
+    background-attachment: fixed;
   }
 
   .home-title {
     text-align: center;
     font-size: 1.1em;
     margin-top: 2.7em;
+    color: rgb(253, 245, 234);
+    text-shadow: 3px 2px 2px #000000df;
   }
 
   .search-section {
     margin: auto;
     width: 92vw;
-    border-style: solid;
-    border-color: rgba(251, 255, 16, 0.428);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -132,7 +136,10 @@
   
   .search-display {
     border-style: solid;
-    border-color: red;
+    border-color: rgba(239, 236, 232, 0.73);
+    border-width: 3px;
+    border-radius: 13px;
+    background-color: rgba(27, 27, 27, 0.535);
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -143,8 +150,6 @@
 
   .search-input-area {
     width: 100%;
-    border-style: solid;
-    border-color: blueviolet;
     margin-right: 1em;
   }
 }
@@ -153,4 +158,6 @@
 .home-error-message {
   text-align: center;
   margin-top: 6em;
+  color: rgb(236, 69, 32);
+  text-shadow: 3px 2px 2px #000000df;
 }

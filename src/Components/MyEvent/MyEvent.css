@@ -4,9 +4,11 @@
     height: 100vh;
     width: 100vw;
     border-style: solid;
-    border-color: hotpink;
-    background-color: antiquewhite;
+    border-color: rgb(3, 3, 3);
     overflow-x: auto;
+    background: linear-gradient(10deg, rgba(161, 150, 120, 0.366) 19%, rgba(61, 55, 48, 0.805) 83%), url(../../Images/horizontal-2.jpg);
+    background-size: cover;
+    background-attachment: fixed;
   }
   
   .event-section {
@@ -20,6 +22,8 @@
     font-size: 2.2em;
     margin-top: 1.7em;
     margin-bottom: 1.1em;
+    color: rgb(244, 239, 232);
+    text-shadow: 3px 2px 2px #000000df;
   }
 }
 
@@ -29,9 +33,11 @@
     height: 100vh;
     width: 100vw;
     border-style: solid;
-    border-color: hotpink;
-    background-color: antiquewhite;
+    border-color: rgb(4, 4, 4);
     overflow-x: auto;
+    background: linear-gradient(10deg, rgba(99, 84, 88, 0.38) 19%, rgba(46, 36, 33, 0.779) 83%), url(../../Images/vertical-1.jpg);
+    background-size: cover;
+    background-attachment: fixed;
   }
   
   .event-section {
@@ -45,7 +51,8 @@
     font-size: 2em;
     margin-top: 1.7em;
     margin-bottom: 1.1em;
-
+    color: rgb(244, 239, 232);
+    text-shadow: 3px 2px 2px #000000df;
   }
 }
 
@@ -55,9 +62,11 @@
     height: 100vh;
     width: 100vw;
     border-style: solid;
-    border-color: hotpink;
-    background-color: antiquewhite;
+    border-color: rgb(3, 3, 3);
     overflow-x: auto;
+    background: linear-gradient(10deg, rgba(99, 84, 88, 0.38) 19%, rgba(68, 58, 55, 0.779) 83%), url(../../Images/vertical-2.jpg);
+    background-size: cover;
+    background-attachment: fixed;
   }
   
   .event-section {
@@ -70,6 +79,8 @@
     text-align: center;
     font-size: 1.1em;
     margin-top: 2.7em;
+    color: rgb(244, 239, 232);
+    text-shadow: 3px 2px 2px #000000df;
   }
 }
 
@@ -77,4 +88,6 @@
 .event-instructions {
   text-align: center;
   width: 69%;
+  color: rgba(224, 227, 153, 0.877);
+  text-shadow: 3px 2px 2px #000000df;
 }
